@@ -1,41 +1,34 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# 1. THƯ MỤC THƯ VIỆN (Tuyệt đối không push vì rất nặng, người khác tải về sẽ tự chạy npm install)
 node_modules/
 
-# Expo
+# 2. FILE TẠM CỦA EXPO
 .expo/
 dist/
 web-build/
-expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
+# 3. FILE BUILD CỦA ANDROID (Chỉ giữ lại mã nguồn cấu hình, bỏ qua các file biên dịch rác)
+android/app/build/
+android/.gradle/
+android/.idea/
+android/app/.cxx/
+*.apk
+*.aab
+*.keystore
 *.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
 
-# Metro
-.metro-health-check*
+# 4. FILE BUILD CỦA IOS (Phòng hờ nếu sau này bạn chạy thêm iOS)
+ios/Pods/
+ios/build/
+ios/Index/
+*.xcworkspace/xcuserdata/
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# 5. CẤU HÌNH IDE & CÔNG CỤ CÁ NHÂN (Tránh gây xung đột cấu hình với người chấm bài)
+.vscode/
+.claude/
 
-# macOS
+# 6. FILE HỆ ĐIỀU HÀNH & LOGS
 .DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
-
-# generated native folders
-/ios
-/android
+Thumbs.db
+npm-debug.log
+yarn-error.log
+yarn-debug.log
